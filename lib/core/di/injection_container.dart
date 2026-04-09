@@ -39,18 +39,14 @@ Future<void> init() async {
   );
 
   // Data sources
-  //
-  // --- PRESENTATION DEMO ---
-  // Để demo Việc thay đổi Data Source dễ dàng với get_it:
-  // Thay đổi comment giữa 2 dòng này để sử dụng LocalDataSource hoặc RemoteDataSource.
-  // Repository và UI sẽ tự động hoạt động với Data Source mới mà không cần đổi code.
-  //
+
   sl.registerLazySingleton<TodoDataSource>(
     () => TodoLocalDataSourceImpl(sl()),
   );
   // sl.registerLazySingleton<TodoDataSource>(
   //   () => TodoRemoteDataSourceImpl(),
   // );
+
 
   // External Databases
   final todoBox = Hive.box<TodoModel>('todos');
